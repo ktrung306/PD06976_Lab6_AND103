@@ -2,4 +2,9 @@
     <string name="app_name">Lab6_PD06976_NguyenKhacTrung</string>
     <string name="sign_up">Don\'t have an account?<b>Sign up</b></string>
     <string name="Login">Already have an account?<b>Login</b></string>
+    <string-array name="spinner_price">
+        <item>Ascending</item>
+        <item>Decrease</item>
+
+    </string-array>
 </resources>

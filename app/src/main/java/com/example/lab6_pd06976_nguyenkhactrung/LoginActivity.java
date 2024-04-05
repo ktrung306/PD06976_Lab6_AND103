@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("id", response.body().getData().get_id());
                     editor.apply();
                     //Sau khi chuyển sang màn hình chính
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
                 }
             }

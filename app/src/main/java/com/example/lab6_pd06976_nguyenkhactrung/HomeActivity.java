@@ -85,4 +85,9 @@ public class HomeActivity extends AppCompatActivity implements FruitAdapter.Frui
     public void edit(Fruit fruit) {
 
     }
+
+    @Override
+    public void showDetail(Fruit fruit) {
+
+    }
 }

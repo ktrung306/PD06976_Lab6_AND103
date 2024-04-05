@@ -2,9 +2,10 @@ package com.example.lab6_pd06976_nguyenkhactrung.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Fruit {
+public class Fruit implements Serializable {
     private String _id, name, quantity, price, status;
     private ArrayList<String> image;
     private String description;
