@@ -28,6 +28,9 @@
             android:name=".AddFruitActivity"
             android:exported="false" />
         <activity
+            android:name=".UpdateFruitActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity

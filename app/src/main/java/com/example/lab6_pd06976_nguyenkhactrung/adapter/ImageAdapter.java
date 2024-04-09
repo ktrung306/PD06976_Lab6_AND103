@@ -31,13 +31,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ImageAdapter.ViewHolder holder, int position) {
         String url = list.get(position);
         String newUrl = url.replace("localhost", "192.168.1.6");
 
         Glide.with(context)
                 .load(newUrl)
-                .thumbnail(Glide.with(context).load(R.drawable.baseline_arrow_back_ios_24))
+                .thumbnail(Glide.with(context).load(R.drawable.baseline_broken_image_24))
                 .into(holder.binding.img);
     }
 

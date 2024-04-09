@@ -243,6 +243,7 @@ public class MainActivity extends AppCompatActivity implements FruitAdapter.Frui
         }
     };
 
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -254,12 +255,26 @@ public class MainActivity extends AppCompatActivity implements FruitAdapter.Frui
 
     @Override
     public void delete(Fruit fruit) {
+        android.app.AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirm delete");
+        builder.setMessage("Are you sure you want to delete?");
+        builder.setPositiveButton("yes", (dialog, which) -> {
+            httpRequest.CallAPI()
+                    .deleteFruits(fruit.get_id())
+                    .enqueue(responseFruitAPI);
+        });
+        builder.setNegativeButton("no", (dialog, which) -> {
+            dialog.dismiss();
+        });
+        builder.show();
 
     }
 
     @Override
     public void edit(Fruit fruit) {
-
+        Intent intent =new Intent(MainActivity.this, UpdateFruitActivity.class);
+        intent.putExtra("fruit", fruit);
+        startActivity(intent);
     }
 
     @Override

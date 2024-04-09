@@ -13,10 +13,12 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.PartMap;
 import retrofit2.http.Path;
@@ -46,6 +48,16 @@ public interface ApiServices {
     @POST("add-fruit-with-file-image")
     Call<Response<Fruit>> addFruitWithFileImage(@PartMap Map<String, RequestBody> requestBodyMap,
                                                @Part ArrayList<MultipartBody.Part> ds_hinh);
+
+    @Multipart
+    @PUT("update-fruit-by-id/{id}")
+    Call<Response<Fruit>> updateFruitWithFileImage(@PartMap Map<String, RequestBody> requestBodyMap,
+                                                   @Path("id") String id,
+                                                   @Part ArrayList<MultipartBody.Part> ds_hinh
+    );
+
+    @DELETE("destroy-fruit-by-id/{id}")
+    Call<Response<Fruit>> deleteFruits(@Path("id") String id);
 
     @GET("get-page-fruit")
     Call<Response<Page<ArrayList<Fruit>>>> getPageFruit(@QueryMap Map<String, String> stringMap);
